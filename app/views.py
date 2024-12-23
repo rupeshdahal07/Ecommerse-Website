@@ -1,8 +1,11 @@
+from django.http import JsonResponse
 from django.shortcuts import redirect, render
 from django.views import View
 from .models import Product, OrderPlaced, Cart, Customer
 from .forms import CustomerRegistratinForm, CustomerProfileForm
 from django.contrib import messages
+from django.db.models import Q
+from django.http import JsonResponse
 
 # def home(request):
 #  return render(request, 'app/home.html')
@@ -44,7 +47,7 @@ def show_cart(request):
       cart = Cart.objects.filter(user=user)
       amount = 0.0
       shipping_amount = 70.0
-      total_amount = 0.0
+      totalamount = 0.0
       cart_product = [p for p in Cart.objects.all() if p.user == user]
 
       if cart_product:
@@ -58,7 +61,32 @@ def show_cart(request):
       else:
          return render(request, 'app/emptycart.html')
 
-        
+def plus_cart(request):
+   if request.method == 'GET':
+      prod_id = request.GET['pord_id']   
+      c = Cart.objects.get(Q(product=prod_id) & Q(user= request.user)) 
+      c.quantity += 1
+      c.save()
+      #re-calculating the amount after adding the quantity  
+      user = request.user
+      amount = 0.0
+      shipping_amount = 70.0
+      totalamount = 0.0
+      cart_product = [p for p in Cart.objects.all() if p.user == user]
+
+      if cart_product:
+        for p in cart_product:
+            tempamount = (p.quantity * p.product.discounted_price)
+            amount += tempamount
+            totalamount = amount + shipping_amount
+
+        data = {
+            'quantity': c.quantity,
+            'amount' : amount,
+            'totalamount' : totalamount
+            }
+        return JsonResponse(data)
+
         
 def show(request):
    pass

@@ -21,3 +21,22 @@ $('#slider1, #slider2, #slider3').owlCarousel({
         }
     }
 })
+
+$('.plus-cart').click(function(){
+    var id = $(this).attr("pid").toString();
+    console.log(id)
+    if (!id) {
+        console.log("Product ID is missing or undefined");
+        return;
+    }
+    $.ajax({
+        type: "GET",
+        url: '/pluscart',
+        data: {
+            prod_id : id
+        },
+        sucess: function(data){
+            console.log(data)
+        }
+    })
+})
