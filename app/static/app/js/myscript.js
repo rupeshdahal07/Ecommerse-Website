@@ -24,7 +24,8 @@ $('#slider1, #slider2, #slider3').owlCarousel({
 
 $('.plus-cart').click(function(){
     var id = $(this).attr("pid").toString();
-    console.log(id)
+    // console.log(id)
+    var eml = this.parentNode.children[2]
     if (!id) {
         console.log("Product ID is missing or undefined");
         return;
@@ -35,8 +36,64 @@ $('.plus-cart').click(function(){
         data: {
             prod_id : id
         },
-        sucess: function(data){
-            console.log(data)
+        success: function(data){
+            // console.log(data)
+            // console.log("Success")
+            eml.innerText = data.quantity
+            document.getElementById("amount").innerText = data.amount
+            document.getElementById("totalamount").innerText = data.totalamount
+            
+        }
+    })
+})
+
+
+$('.minus-cart').click(function(){
+    var id = $(this).attr("pid").toString();
+    // console.log(id)
+    var eml = this.parentNode.children[2]
+    if (!id) {
+        console.log("Product ID is missing or undefined");
+        return;
+    }
+    $.ajax({
+        type: "GET",
+        url: '/minuscart',
+        data: {
+            prod_id : id
+        },
+        success: function(data){
+            // console.log(data)
+            // console.log("Success")
+            eml.innerText = data.quantity
+            document.getElementById("amount").innerText = data.amount
+            document.getElementById("totalamount").innerText = data.totalamount
+            
+        }
+    })
+})
+
+$('.remove-cart').click(function(){
+    var id = $(this).attr("pid").toString();
+    // console.log(id)
+    var eml = this
+    if (!id) {
+        console.log("Product ID is missing or undefined");
+        return;
+    }
+    $.ajax({
+        type: "GET",
+        url: '/removecart',
+        data: {
+            prod_id : id
+        },
+        success: function(data){
+            // console.log(data)
+            // console.log("Success")
+            document.getElementById("amount").innerText = data.amount
+            document.getElementById("totalamount").innerText = data.totalamount
+            eml.parentNode.parentNode.parentNode.parentNode.remove()
+            
         }
     })
 })
