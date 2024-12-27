@@ -49,6 +49,7 @@ def add_to_cart(request):
     Cart(user=user, product=product).save()
     return redirect('/cart')
 
+
 @login_required
 def show_cart(request):
    if request.user.is_authenticated:
@@ -70,6 +71,8 @@ def show_cart(request):
                                                     'amount': amount})
       else:
          return render(request, 'app/emptycart.html')
+      
+      
 
 @login_required
 def plus_cart(request):

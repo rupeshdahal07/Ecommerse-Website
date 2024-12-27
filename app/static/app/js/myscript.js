@@ -92,7 +92,7 @@ $('.remove-cart').click(function(){
             // console.log("Success")
             document.getElementById("amount").innerText = data.amount
             document.getElementById("totalamount").innerText = data.totalamount
-            eml.parentNode.parentNode.parentNode.parentNode.remove()
+            eml.parentNode.parentNode.parentNode.parentNode.parentNode.remove()
             
         }
     })
