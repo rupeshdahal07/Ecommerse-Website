@@ -1,0 +1,638 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block banner_slider %}
+<!-- Hero Section with Gradient Background -->
+<div class="hero-section">
+  <div class="container-fluid p-0">
+    <div class="row no-gutters">
+      <div class="col-12">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="hero-slide" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <div class="hero-content">
+                  <h1 class="hero-title">Welcome to MaroShop</h1>
+                  <p class="hero-subtitle">Discover Amazing Products at Unbeatable Prices</p>
+                  <a href="#featured-products" class="btn btn-light btn-lg hero-btn">Shop Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="hero-slide" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <div class="hero-content">
+                  <h1 class="hero-title">Fashion Collection</h1>
+                  <p class="hero-subtitle">Trendy Clothes for Every Occasion</p>
+                  <a href="#fashion-section" class="btn btn-light btn-lg hero-btn">Explore Fashion</a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="hero-slide" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <div class="hero-content">
+                  <h1 class="hero-title">Latest Electronics</h1>
+                  <p class="hero-subtitle">Cutting-edge Technology at Your Fingertips</p>
+                  <a href="#electronics-section" class="btn btn-light btn-lg hero-btn">View Electronics</a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="hero-slide" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                <div class="hero-content">
+                  <h1 class="hero-title">Special Offers</h1>
+                  <p class="hero-subtitle">Save Big with Our Exclusive Deals</p>
+                  <a href="#offers-section" class="btn btn-light btn-lg hero-btn">View Offers</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock banner_slider %}
+
+{% block livesale %}
+<!-- Special Offers Banner -->
+<section id="offers-section" class="py-5" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-8">
+        <div class="offer-content text-white">
+          <div class="d-flex align-items-center mb-3">
+            <i class="fas fa-fire fa-2x me-3 text-warning"></i>
+            <h2 class="mb-0 fw-bold">MEGA SALE IS LIVE!</h2>
+          </div>
+          <p class="mb-3 fs-5">Get up to 70% off on selected items + Extra 5% off with Axis Bank Cards</p>
+          <small class="text-white-50">*Terms and conditions apply. Visit bank's official website for details.</small>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="offer-timer">
+          <div class="d-flex justify-content-center">
+            <div class="time-unit me-3">
+              <div class="time-number bg-white text-dark rounded p-2 fw-bold">23</div>
+              <small class="text-white">Hours</small>
+            </div>
+            <div class="time-unit me-3">
+              <div class="time-number bg-white text-dark rounded p-2 fw-bold">45</div>
+              <small class="text-white">Minutes</small>
+            </div>
+            <div class="time-unit">
+              <div class="time-number bg-white text-dark rounded p-2 fw-bold">12</div>
+              <small class="text-white">Seconds</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock livesale %}
+
+{% block main-content %}
+<!-- Featured Products Section -->
+<section id="featured-products" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold text-dark mb-3">Featured Products</h2>
+      <p class="lead text-muted">Discover our handpicked selection of amazing products</p>
+      <div class="underline mx-auto"></div>
+    </div>
+    
+    <!-- Category Tabs -->
+    <ul class="nav nav-pills justify-content-center mb-5" id="productTabs">
+      <li class="nav-item">
+        <a class="nav-link active custom-tab" data-bs-toggle="pill" href="#mobiles-tab">
+          <i class="fas fa-mobile-alt me-2"></i>Mobiles
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-tab" data-bs-toggle="pill" href="#topwears-tab">
+          <i class="fas fa-tshirt me-2"></i>Top Wears
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-tab" data-bs-toggle="pill" href="#bottomwears-tab">
+          <i class="fas fa-user-tie me-2"></i>Bottom Wears
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-tab" data-bs-toggle="pill" href="#laptops-tab">
+          <i class="fas fa-laptop me-2"></i>Laptops
+        </a>
+      </li>
+    </ul>
+    
+    <!-- Tab Content -->
+    <div class="tab-content">
+      <!-- Mobiles Tab -->
+      <div class="tab-pane fade show active" id="mobiles-tab">
+        <div class="row g-4">
+          {% for item in mobiles %}
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card h-100">
+              <div class="product-image">
+                <img src="{{item.product_image.url}}" alt="{{item.title}}" class="img-fluid">
+                <div class="product-overlay">
+                  <a href="{% url 'product-detail' item.id %}" class="btn btn-primary btn-sm">
+                    <i class="fas fa-eye me-1"></i>View Details
+                  </a>
+                </div>
+              </div>
+              <div class="product-info">
+                <h5 class="product-title">{{item.title}}</h5>
+                <div class="product-price">
+                  <span class="price-current">₹{{item.discounted_price}}</span>
+                  <span class="price-original">₹{{item.selling_price}}</span>
+                </div>
+                <div class="product-rating">
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="far fa-star text-warning"></i>
+                  <span class="rating-text">(4.2)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      
+      <!-- Top Wears Tab -->
+      <div class="tab-pane fade" id="topwears-tab">
+        <div class="row g-4">
+          {% for item in topwears %}
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card h-100">
+              <div class="product-image">
+                <img src="{{item.product_image.url}}" alt="{{item.title}}" class="img-fluid">
+                <div class="product-overlay">
+                  <a href="{% url 'product-detail' item.id %}" class="btn btn-primary btn-sm">
+                    <i class="fas fa-eye me-1"></i>View Details
+                  </a>
+                </div>
+              </div>
+              <div class="product-info">
+                <h5 class="product-title">{{item.title}}</h5>
+                <div class="product-price">
+                  <span class="price-current">₹{{item.discounted_price}}</span>
+                  <span class="price-original">₹{{item.selling_price}}</span>
+                </div>
+                <div class="product-rating">
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="far fa-star text-warning"></i>
+                  <span class="rating-text">(4.1)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      
+      <!-- Bottom Wears Tab -->
+      <div class="tab-pane fade" id="bottomwears-tab">
+        <div class="row g-4">
+          {% for item in bottomwears %}
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card h-100">
+              <div class="product-image">
+                <img src="{{item.product_image.url}}" alt="{{item.title}}" class="img-fluid">
+                <div class="product-overlay">
+                  <a href="{% url 'product-detail' item.id %}" class="btn btn-primary btn-sm">
+                    <i class="fas fa-eye me-1"></i>View Details
+                  </a>
+                </div>
+              </div>
+              <div class="product-info">
+                <h5 class="product-title">{{item.title}}</h5>
+                <div class="product-price">
+                  <span class="price-current">₹{{item.discounted_price}}</span>
+                  <span class="price-original">₹{{item.selling_price}}</span>
+                </div>
+                <div class="product-rating">
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="far fa-star text-warning"></i>
+                  <span class="rating-text">(4.3)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      
+      <!-- Laptops Tab -->
+      <div class="tab-pane fade" id="laptops-tab">
+        <div class="row g-4">
+          {% for item in laptops %}
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card h-100">
+              <div class="product-image">
+                <img src="{{item.product_image.url}}" alt="{{item.title}}" class="img-fluid">
+                <div class="product-overlay">
+                  <a href="{% url 'product-detail' item.id %}" class="btn btn-primary btn-sm">
+                    <i class="fas fa-eye me-1"></i>View Details
+                  </a>
+                </div>
+              </div>
+              <div class="product-info">
+                <h5 class="product-title">{{item.title}}</h5>
+                <div class="product-price">
+                  <span class="price-current">₹{{item.discounted_price}}</span>
+                  <span class="price-original">₹{{item.selling_price}}</span>
+                </div>
+                <div class="product-rating">
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="fas fa-star text-warning"></i>
+                  <i class="far fa-star text-warning"></i>
+                  <span class="rating-text">(4.5)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold text-white mb-3">Why Choose MaroShop?</h2>
+      <p class="lead text-white-50">Experience shopping like never before</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-3 col-sm-6">
+        <div class="feature-card text-center">
+          <div class="feature-icon">
+            <i class="fas fa-shipping-fast"></i>
+          </div>
+          <h5 class="feature-title">Fast Delivery</h5>
+          <p class="feature-text">Quick and reliable delivery to your doorstep</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="feature-card text-center">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h5 class="feature-title">Secure Payment</h5>
+          <p class="feature-text">100% secure payment with multiple options</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="feature-card text-center">
+          <div class="feature-icon">
+            <i class="fas fa-undo-alt"></i>
+          </div>
+          <h5 class="feature-title">Easy Returns</h5>
+          <p class="feature-text">Hassle-free returns within 30 days</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="feature-card text-center">
+          <div class="feature-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h5 class="feature-title">24/7 Support</h5>
+          <p class="feature-text">Round-the-clock customer support</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Payment Methods Section -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-6 fw-bold text-dark mb-3">Secure Payment Options</h2>
+      <p class="lead text-muted">Shop with confidence using your preferred payment method</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="row g-3">
+          <div class="col-md-3 col-6">
+            <div class="payment-card">
+              <img src="{% static 'app/images/payavail/cc.jpg' %}" alt="Credit Card" class="payment-image">
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="payment-card">
+              <img src="{% static 'app/images/payavail/upi.jpg' %}" alt="UPI" class="payment-image">
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="payment-card">
+              <img src="{% static 'app/images/payavail/nb.jpg' %}" alt="Net Banking" class="payment-image">
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="payment-card">
+              <img src="{% static 'app/images/payavail/bj.jpg' %}" alt="Bank Transfer" class="payment-image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h3 class="text-white fw-bold mb-3">Stay Updated with Latest Offers!</h3>
+        <p class="text-white-50 mb-0">Subscribe to our newsletter and never miss a deal</p>
+      </div>
+      <div class="col-md-6">
+        <div class="newsletter-form">
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Enter your email address">
+            <button class="btn btn-warning fw-bold" type="button">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Custom CSS for the new design */
+.hero-section {
+  height: 500px;
+  overflow: hidden;
+}
+
+.hero-slide {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-content {
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.hero-btn {
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+.custom-tab {
+  border-radius: 25px !important;
+  margin: 0 5px;
+  font-weight: 600;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.custom-tab.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border-color: transparent !important;
+  color: white !important;
+}
+
+.custom-tab:hover {
+  border-color: #667eea;
+}
+
+.product-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.product-image {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-overlay {
+  opacity: 1;
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+  height: 50px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.product-price {
+  margin-bottom: 10px;
+}
+
+.price-current {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #28a745;
+}
+
+.price-original {
+  font-size: 1rem;
+  color: #6c757d;
+  text-decoration: line-through;
+  margin-left: 10px;
+}
+
+.product-rating {
+  font-size: 0.9rem;
+}
+
+.rating-text {
+  color: #6c757d;
+  margin-left: 5px;
+}
+
+.feature-card {
+  padding: 30px 20px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.feature-title {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.feature-text {
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 0;
+}
+
+.payment-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.payment-card:hover {
+  transform: translateY(-3px);
+}
+
+.payment-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.newsletter-form .form-control {
+  border-radius: 25px 0 0 25px;
+  border: none;
+  padding: 12px 20px;
+}
+
+.newsletter-form .btn {
+  border-radius: 0 25px 25px 0;
+  padding: 12px 30px;
+  border: none;
+}
+
+.time-number {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .product-card {
+    margin-bottom: 20px;
+  }
+}
+</style>
+{% endblock main-content %}
+
