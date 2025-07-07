@@ -3,7 +3,7 @@
 {% block title %}Home{% endblock title %}
 
 {% block banner_slider %}
-<!-- Hero Section with Gradient Background -->
+<!-- Hero Section with Images -->
 <div class="hero-section">
   <div class="container-fluid p-0">
     <div class="row no-gutters">
@@ -16,43 +16,86 @@
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
           </div>
           <div class="carousel-inner">
+            <!-- Slide 1 - Welcome -->
             <div class="carousel-item active">
-              <div class="hero-slide" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+              <div class="hero-slide">
+                <img src="{% static 'app/images/banner/b44.jpg' %}" alt="MaroShop Welcome" class="hero-bg-image">
+                <div class="hero-overlay"></div>
                 <div class="hero-content">
-                  <h1 class="hero-title">Welcome to MaroShop</h1>
-                  <p class="hero-subtitle">Discover Amazing Products at Unbeatable Prices</p>
-                  <a href="#featured-products" class="btn btn-light btn-lg hero-btn">Shop Now</a>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <h1 class="hero-title">Welcome to MaroShop</h1>
+                        <p class="hero-subtitle">Discover Amazing Products at Unbeatable Prices</p>
+                        <a href="#featured-products" class="btn btn-primary btn-lg hero-btn">Shop Now</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <!-- Slide 2 - Fashion -->
             <div class="carousel-item">
-              <div class="hero-slide" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+              <div class="hero-slide">
+                <img src="{% static 'app/images/banner/b44.jpg' %}" alt="Fashion Collection" class="hero-bg-image">
+                <div class="hero-overlay"></div>
                 <div class="hero-content">
-                  <h1 class="hero-title">Fashion Collection</h1>
-                  <p class="hero-subtitle">Trendy Clothes for Every Occasion</p>
-                  <a href="#fashion-section" class="btn btn-light btn-lg hero-btn">Explore Fashion</a>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-6 offset-lg-6">
+                        <h1 class="hero-title">Fashion Collection</h1>
+                        <p class="hero-subtitle">Trendy Clothes for Every Occasion</p>
+                        <a href="#fashion-section" class="btn btn-warning btn-lg hero-btn">Explore Fashion</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <!-- Slide 3 - Electronics -->
             <div class="carousel-item">
-              <div class="hero-slide" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+              <div class="hero-slide">
+                <img src="{% static 'app/images/banner/b33.jpg' %}" alt="Latest Electronics" class="hero-bg-image">
+                <div class="hero-overlay"></div>
                 <div class="hero-content">
-                  <h1 class="hero-title">Latest Electronics</h1>
-                  <p class="hero-subtitle">Cutting-edge Technology at Your Fingertips</p>
-                  <a href="#electronics-section" class="btn btn-light btn-lg hero-btn">View Electronics</a>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <h1 class="hero-title">Latest Electronics</h1>
+                        <p class="hero-subtitle">Cutting-edge Technology at Your Fingertips</p>
+                        <a href="#electronics-section" class="btn btn-info btn-lg hero-btn">View Electronics</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <!-- Slide 4 - Special Offers -->
             <div class="carousel-item">
-              <div class="hero-slide" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+              <div class="hero-slide">
+                <img src="{% static 'app/images/hero-offers.jpg' %}" alt="Special Offers" class="hero-bg-image">
+                <div class="hero-overlay"></div>
                 <div class="hero-content">
-                  <h1 class="hero-title">Special Offers</h1>
-                  <p class="hero-subtitle">Save Big with Our Exclusive Deals</p>
-                  <a href="#offers-section" class="btn btn-light btn-lg hero-btn">View Offers</a>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-6 offset-lg-6">
+                        <div class="offer-badge">
+                          <span class="badge bg-danger fs-6 mb-3">LIMITED TIME OFFER</span>
+                        </div>
+                        <h1 class="hero-title">Up to 70% OFF</h1>
+                        <p class="hero-subtitle">Save Big with Our Exclusive Deals</p>
+                        <a href="#offers-section" class="btn btn-success btn-lg hero-btn">View Offers</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          
           <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
           </button>
@@ -333,7 +376,7 @@
 
 <!-- Payment Methods Section -->
 <section class="py-5 bg-white">
-  <div class="container">
+  <div class="container ">
     <div class="text-center mb-5">
       <h2 class="display-6 fw-bold text-dark mb-3">Secure Payment Options</h2>
       <p class="lead text-muted">Shop with confidence using your preferred payment method</p>
@@ -346,9 +389,10 @@
               <img src="{% static 'app/images/payavail/cc.jpg' %}" alt="Credit Card" class="payment-image">
             </div>
           </div>
+       
           <div class="col-md-3 col-6">
             <div class="payment-card">
-              <img src="{% static 'app/images/payavail/upi.jpg' %}" alt="UPI" class="payment-image">
+              <img src="{% static 'app/images/payavail/nb.jpg' %}" alt="Net Banking" class="payment-image">
             </div>
           </div>
           <div class="col-md-3 col-6">
@@ -358,9 +402,10 @@
           </div>
           <div class="col-md-3 col-6">
             <div class="payment-card">
-              <img src="{% static 'app/images/payavail/bj.jpg' %}" alt="Bank Transfer" class="payment-image">
+              <img src="{% static 'app/images/payavail/nb.jpg' %}" alt="Net Banking" class="payment-image">
             </div>
           </div>
+          
         </div>
       </div>
     </div>
@@ -388,53 +433,155 @@
 </section>
 
 <style>
-/* Custom CSS for the new design */
+/* Updated CSS for image-based hero section */
 .hero-section {
-  height: 500px;
+  height: 600px;
   overflow: hidden;
 }
 
 .hero-slide {
-  height: 500px;
+  height: 600px;
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
+}
+
+.hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
 }
 
 .hero-content {
-  text-align: center;
+  position: relative;
+  z-index: 3;
   color: white;
-  z-index: 2;
+  width: 100%;
 }
 
 .hero-title {
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  line-height: 1.2;
 }
 
 .hero-subtitle {
   font-size: 1.3rem;
   margin-bottom: 2rem;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  opacity: 0.9;
 }
 
 .hero-btn {
-  padding: 12px 30px;
+  padding: 15px 35px;
   font-weight: 600;
   border-radius: 50px;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .hero-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
+.offer-badge {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.carousel-indicators {
+  bottom: 30px;
+}
+
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: transparent;
+  opacity: 0.5;
+}
+
+.carousel-indicators button.active {
+  background-color: white;
+  opacity: 1;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 30px;
+  height: 30px;
+  background-size: 100%;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 400px;
+  }
+  
+  .hero-slide {
+    height: 400px;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-btn {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+  
+  .col-lg-6.offset-lg-6 {
+    offset: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Custom CSS for the new design */
 .underline {
   width: 80px;
   height: 4px;
